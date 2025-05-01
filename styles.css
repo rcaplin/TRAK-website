@@ -553,3 +553,47 @@ a {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/* 1. Prevent any accidental horizontal scroll */
+html {
+  overflow-x: hidden;
+}
+
+/* 2. Center all headings by default */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* 3. Simplify & center your section titles */
+.section-title {
+  /* remove the old relative/left/transform trick */
+  position: static !important;
+  transform: none !important;
+  display: block;
+  margin: 0 auto 3rem;     /* center horizontally + bottom gap */
+  font-size: 2rem;         /* keep your existing size */
+}
+
+/* 4. Center the underline as its own block */
+.section-title .title-underline {
+  /* drop the absolute positioning */
+  position: static;
+  display: block;
+  width: 3rem;             /* or whatever fixed width you like */
+  height: 0.25rem;
+  margin: 0.5rem auto 0;   /* top gap + center + no bottom gap */
+  background-color: var(--trak-yellow);
+}
+
+/* 5. Make media truly responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;   /* removes inline whitespace issues */
+}
+
+/* 6. Break up any impossibly long words/URLs */
+body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
